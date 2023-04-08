@@ -1,6 +1,11 @@
 package com.glc;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
+import java.util.List;
+
+import org.junit.Test;
 
 import org.junit.Test;
 
