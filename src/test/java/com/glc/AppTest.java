@@ -33,4 +33,18 @@ public class AppTest
         List<String> bookList = readingList.bookList;
         assertEquals(0,bookList.size());
     }
+
+     //AC 2:Given that I have an empty list, when I add the first book to my list then I expect `numberRead` to return 1.
+
+    @Test 
+    public void addBook(){
+        //Setup
+        Book book = new Book("The psychology of money", "Morgan Housel", 240, 1890);
+        ReadingList readingList = new ReadingList();
+        //execute
+        readingList.addBook(book, "January 1, 2023", 5);
+
+        //Assert
+        assertEquals(1,readingList.numberRead());
+    }
 }
