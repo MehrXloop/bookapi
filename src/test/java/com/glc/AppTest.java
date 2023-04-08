@@ -46,4 +46,21 @@ public class AppTest
         //Assert
         assertEquals(1,readingList.numberRead());
     }
+
+     //AC 3:Given that I have an empty list, when I add additional books to the list I expect the `numberRead` to return the total number of books in my list.
+
+     @Test 
+     public void addBooks(){
+         //Setup
+         Book book = new Book("The psychology of money", "Morgan Housel", 240, 1890);
+         Book book2 = new Book("Rich Dad poor Dad", "robert kiawski", 250, 1998);
+         ReadingList readingList = new ReadingList();
+         //execute
+         readingList.addBook(book, "January 1, 2023", 5);
+         readingList.addBook(book2, "January 4, 2023", 4);
+ 
+         //Assert
+         assertEquals(2,readingList.numberRead());
+     }
+
 }
