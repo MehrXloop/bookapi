@@ -7,8 +7,6 @@ import java.util.List;
 
 import org.junit.Test;
 
-import org.junit.Test;
-
 /**
  * Unit test for simple App.
  */
@@ -23,18 +21,19 @@ public class AppTest
         assertTrue( true );
     }
 
-     //AC 1:Given that I visit the site, when I first start, I expect my list to be empty.
+    //AC 1:Given that I visit the site, when I first start, I expect my list to be empty.
+
 
     @Test
     public void emptyList(){
         //Setup
         ReadingList readingList = new ReadingList();
         //Assert
-        List<String> bookList = readingList.bookList;
+        List<BookItem> bookList = readingList.bookList;
         assertEquals(0,bookList.size());
     }
 
-     //AC 2:Given that I have an empty list, when I add the first book to my list then I expect `numberRead` to return 1.
+    //AC 2:Given that I have an empty list, when I add the first book to my list then I expect `numberRead` to return 1.
 
     @Test 
     public void addBook(){
