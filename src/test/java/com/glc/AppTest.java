@@ -70,11 +70,11 @@ public class AppTest
      public void removeBook(){
         //Setup
         Book book = new Book("The psychology of money", "Morgan Housel", 240, 1890);
-        Book book2 = new Book("Rich Dad poor Dad", "robert kiawski", 250, 1998);
+        Book book2 = new Book("Rich dad poor dad", "robert kiawski", 250, 1998);
         ReadingList readingList = new ReadingList();
 
         List<String> result = new LinkedList<>();
-        result.add("Rich dad poor dad by robert kiawski, 250 pages, 1998 read on January 4, 2023,****");
+        result.add("Rich dad poor dad by robert kiawski, 250 pages, 1998, read on January 4, 2023,****");
 
         //Execute
         readingList.addBook(book, "January 1, 2023", 5);
