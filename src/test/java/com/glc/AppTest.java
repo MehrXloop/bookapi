@@ -86,4 +86,22 @@ public class AppTest
     
      }
 
+     //AC 5:Given that I have an empty list, when I add a new book I expect `getBooks()` to return a list of books that includes the book I added.
+     
+     @Test
+     public void getBookAfterAddingNew(){
+        //Setup
+        Book book2 = new Book("Rich dad poor dad", "robert kiawski", 250, 1998);
+        ReadingList readingList = new ReadingList();
+
+        List<String> result = new LinkedList<>();
+        result.add("Rich dad poor dad by robert kiawski, 250 pages, 1998, read on January 4, 2023,****");
+
+        //Execute
+        readingList.addBook(book2, "January 4, 2023", 4);
+         
+        //Assert
+        assertEquals(result,readingList.getBooks());
+    
+     }
 }
