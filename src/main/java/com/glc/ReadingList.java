@@ -11,28 +11,46 @@ public class ReadingList {
         BookItem bookItem = new BookItem(book, dateRead, rating);
         this.bookList.add(bookItem);
     }
-    public int numberRead(){
+
+    public int numberRead() {
         return this.bookList.size();
     }
 
-    public void removeBook(String title){
+    public void removeBook(String title) {
         int index = 0;
-            for(BookItem bookItem:this.bookList){
-                if(bookItem.book.title == title){
-                    index = this.bookList.indexOf(bookItem);
-                }
+        for (BookItem bookItem : this.bookList) {
+            if (bookItem.book.title == title) {
+                index = this.bookList.indexOf(bookItem);
             }
-            this.bookList.remove(index);
+        }
+        this.bookList.remove(index);
     }
-   public List<String> getBooks(){
-    List<String> bookString = new LinkedList<>();
-   for(BookItem bookItem:this.bookList){
-       String  ratingStar = "";
-         for(int i=0;i<bookItem.rating;i++){
+
+    public List<String> getBooks() {
+        List<String> bookString = new LinkedList<>();
+        for (BookItem bookItem : this.bookList) {
+            String ratingStar = "";
+            for (int i = 0; i < bookItem.rating; i++) {
                 ratingStar += "*";
             }
-        bookString.add(bookItem.book.title+" by "+bookItem.book.author+", "+bookItem.book.length+" pages, "+bookItem.book.year+", "+"read on "+bookItem.dateRead+","+ratingStar);
+            bookString.add(bookItem.book.title + " by " + bookItem.book.author + ", " + bookItem.book.length
+                    + " pages, " + bookItem.book.year + ", " + "read on " + bookItem.dateRead + "," + ratingStar);
+        }
+        return bookString;
     }
-    return bookString;
-   }
+    public List<String> getBooksByRating(int rating) {
+        List<String> bookString = new LinkedList<>();
+        for (BookItem bookItem : this.bookList) {
+           if(bookItem.rating == rating){
+            String ratingStar = "";
+            for (int i = 0; i < bookItem.rating; i++) {
+                ratingStar += "*";
+            }
+            bookString.add(bookItem.book.title + " by " + bookItem.book.author + ", " + bookItem.book.length
+                    + " pages, " + bookItem.book.year + ", " + "read on " + bookItem.dateRead + "," + ratingStar);
+           }
+        }
+        return bookString;
+    }
+
 }
