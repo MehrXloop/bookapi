@@ -104,4 +104,26 @@ public class AppTest
         assertEquals(result,readingList.getBooks());
     
      }
+
+     //AC 6:Given when I call `getBooksByRating()`, I should return a list of books that all have that rating.
+
+     @Test
+     public void getBooksByRating(){
+        //Setup
+        Book book2 = new Book("Rich dad poor dad", "robert kiawski", 250, 1998);
+        Book book = new Book("The psychology of money", "Morgan Housel", 240, 1890);
+        ReadingList readingList = new ReadingList();
+
+        List<String> result = new LinkedList<>();
+        result.add("Rich dad poor dad by robert kiawski, 250 pages, 1998, read on January 4, 2023,****");
+
+
+        //Execute
+        readingList.addBook(book2, "January 4, 2023", 4);
+        readingList.addBook(book, "January 1, 2023", 5);
+         
+        //Assert
+        assertEquals(result,readingList.getBooksByRating(4));
+    
+     }
 }
